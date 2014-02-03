@@ -38,6 +38,12 @@ Or:
 auto result = ext::make_pipe(v) | plusone | addone;
 ```
 
+Or:
+
+```
+(ext::make_pipe(v) | plusone | addone) > result;
+```
+
 About
 -----
 

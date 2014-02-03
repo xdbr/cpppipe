@@ -52,6 +52,16 @@ void test4() {
     BOOST_REQUIRE(expected == result);
 }
 
+void test5() {
+    std::vector<int> v{ 0, 2, 4 };
+    std::vector<int> expected{ 2, 4, 6 };
+    std::vector<int> result;
+
+    (ext::make_pipe(v) | plusone | addone) > result;
+
+    BOOST_REQUIRE(expected == result);
+}
+
 struct specification {
     typedef std::function<void()>       function_type;
     typedef std::vector<function_type>  value_type;

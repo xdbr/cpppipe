@@ -19,6 +19,11 @@ public:
         std::transform(_.begin(), _.end(), _.begin(), f);
         return pipe<T>{_};
     }
+    inline T operator>(T&t) {
+        // std::transform(_.begin(), _.end(), t.begin(), f);
+        t=_;
+        return t;
+    }
     inline auto operator==(const pipe<T> & rhs) const
     ->decltype(this->_ == rhs._) {
         return this->_ == rhs._;
